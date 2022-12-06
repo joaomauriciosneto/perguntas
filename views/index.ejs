@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs');  %>
+<body>
+  <%- include('partials/navbar.ejs'); %>
+  
+  <div class="container">
+    <hr>
+    <h1>Perguntas</h1>
+    <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+    <hr>
+    <% perguntas.map(pergunta => { %>
+
+      <div class="card mt-3">
+        <div class="card-body">
+          <h3><%= pergunta.titulo %></h3>
+          <hr>
+        </div>
+        <div class="footer">
+          <a href="/pergunta/<%= pergunta.id %>">
+            <button class="btn btn-primary mb-2 ms-3">
+              Responder            
+            </button>
+          </a>          
+        </div>
+      </div>
+
+    <% }) %>
+  </div>
+
+</body>
+<%- include('partials/footer.ejs'); %>
